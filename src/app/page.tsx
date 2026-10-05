@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -15,59 +16,39 @@ export default function Home() {
     console.log("clicked");
     console.log("clicked");
 
-    if(isValid){
+    if (isValid) {
       router.push("/products")
     }
   }
 
-  return(
-    <div>
-      <img src="Walmart-Logo.png" className="w-[10vw]" alt="" />
-      <h1 className="text-2xl font-bold ">{process.env.STORE_NAME}</h1>
+  return (
+    <div className="bg-gray-50 flex flex-col">
 
-     <Navbar />
+      <div className="flex-1 flex flex-col items-center justify-center text-center px-4">
 
-      <br /><br />
+        <img
+          src="Walmart-Logo.png"
+          className="w-[180px] mb-6"
+          alt="Walmart Logo"
+        />
 
-      <button className="border bg-cyan-600 p-3 rounded-md hover:bg-red-600" onClick={onClickHandle}>
-           Login
-      </button>
+        <h1 className="text-4xl font-bold text-gray-800 mb-3">
+          Walmart
+        </h1>
+
+        <p className="text-gray-500 text-lg mb-8">
+          Welcome to our online store
+        </p>
+
+        <button
+          className="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold shadow-md hover:bg-cyan-700 hover:shadow-lg transition duration-200"
+          onClick={onClickHandle}
+        >
+          Login
+        </button>
+
+      </div>
 
     </div>
   )
 }
-
-
-
-
-
-
-// import Image from "next/image";
-// import Link from "next/link";
-// import { redirect } from "next/navigation";
-
-
-// export default function Home() {
-
-
-//   const isValid = true;
-//   if (isValid) {
-//     redirect("/products");
-//   }
-
-
-//   return (
-//     <div>
-//       <img src="Walmart-Logo.png" className="w-[10vw]" alt="" />
-//       <h1 className="text-2xl font-bold ">{process.env.STORE_NAME}</h1>
-
-//       <nav className="flex gap-3">
-//         <Link href={"/products"}>Product</Link>
-//         <Link href={"/contact"}>Contacts</Link>
-//         <Link href={"/categories"}>Categories</Link>
-//         <Link href={"/terms"}>Terms</Link>
-//       </nav>
-
-//     </div>
-//   )
-// }
